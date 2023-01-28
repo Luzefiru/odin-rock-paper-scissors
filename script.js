@@ -1,3 +1,5 @@
+game(); // start a game
+
 /**
  * Plays a game of "Rock Paper Scissors".
  * 
