@@ -1,7 +1,7 @@
 game(); // start a game
 
 /**
- * Plays a game of "Rock Paper Scissors".
+ * Plays a best-of-5-rounds game of "Rock Paper Scissors".
  * 
  * Handles invalid input & is case-insensitive.
  */
