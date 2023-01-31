@@ -116,18 +116,18 @@ function playRound(playerChoice, computerChoice) {
     {
         case 'rock':
             return (computerChoice == 'scissors')
-            ? "You win! Rock beats Scissors."
-            : "You lose. Paper beats Rock.";
+            ? "You win!"
+            : "You lose.";
 
         case 'paper':
             return (computerChoice == 'rock')
-            ? "You win! Paper beats Rock."
-            : "You lose. Scissors beats Paper.";
+            ? "You win!"
+            : "You lose.";
 
         case 'scissors':
             return (computerChoice == 'paper')
-            ? "You win! Scissors beats Paper."
-            : "You lose. Rock beats Scissors.";
+            ? "You win!"
+            : "You lose.";
     }
 }
 
