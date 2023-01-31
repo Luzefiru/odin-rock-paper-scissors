@@ -14,7 +14,7 @@ I need to practice;
 
 # Output
 ### [Visit the Website Here](https://luzefiru.github.io/odin-rock-paper-scissors/)
-![[./output/website-screenshot.png]]
+<img src="./requirements/website-screenshot.png">
 
 # Requirements
 These were the requirements in The Odin Project's [Project: Rock Paper Scissors](https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors) site to initially be followed and to be optionally edited later.
