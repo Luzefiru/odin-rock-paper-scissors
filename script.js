@@ -40,20 +40,36 @@ function updateScore() {
         document.querySelector('.card-scoreboard-computer').innerText = computerScore;
     }
 
-    // prints an appropriate message when the combined score reaches 5 points (best of 5 rounds)
-    if (playerScore + computerScore >= 5) {
+    if (playerScore + computerScore == 5) {
+        // prints an appropriate message when the combined score reaches 5 points (best of 5 rounds)
         const winner = (playerScore > computerScore) ? 'You' : 'The Computer'
         displayToCardResult(`${(winner)} won the game!`);
+    }
+    else if (playerScore + computerScore >= 6) {
+        // asks the player whether to start a new game or exit the browser tab
+        replayGameConfirmation();
     }
 }
 
 /**
- * 
  * @param {string} str the string to be displayed in the website's Result Card, typically for round announcements
  */
-function displayToCardResult (str) {
+function displayToCardResult(str) {
     const cardResult = document.querySelector('.card-result > .card-result-message');
     cardResult.innerText = str;
+}
+
+/**
+ * Cheesy function to restart or exit the game.
+ * 
+ * TODO: remove this function & integrate an actual replay menu in the viewport
+ */
+function replayGameConfirmation() {
+    const yes = confirm("Would you like to play again?");
+    if (yes)
+        location.reload();
+    else
+        window.close();
 }
 
 // RPS logic
