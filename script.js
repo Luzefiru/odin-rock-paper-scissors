@@ -63,13 +63,12 @@ function updateScore() {
 
     if (playerScore + computerScore == 5) {
         // prints an appropriate message when the combined score reaches 5 points (best of 5 rounds)
-        const winner = (playerScore > computerScore) ? 'You' : 'The Computer'
-        displayToCardResult(`${(winner)} won the game!`);
+        const winner = (playerScore > computerScore) ? 'You' : 'The Computer';
+        setTimeout(() => alert(`${(winner)} won the game!`), 100);
+        setTimeout(() => replayGameConfirmation(), 110);
     }
-    else if (playerScore + computerScore >= 6) {
-        // asks the player whether to start a new game or exit the browser tab
-        replayGameConfirmation();
-    }
+
+    
 }
 
 /**
