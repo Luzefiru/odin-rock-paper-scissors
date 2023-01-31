@@ -1,4 +1,22 @@
-game(); // start a game
+const buttonPlayerRock = document.querySelector('.buttons-player-rock');
+buttonPlayerRock.addEventListener('click', () =>
+    console.log(playRound('rock', getComputerChoice()))
+);
+
+const buttonPlayerPaper = document.querySelector('.buttons-player-paper');
+buttonPlayerPaper.addEventListener('click', () =>
+    console.log(playRound('paper', getComputerChoice()))
+);
+
+const buttonPlayerScissors = document.querySelector('.buttons-player-scissors');
+buttonPlayerScissors.addEventListener('click', () =>
+    console.log(playRound('scissors', getComputerChoice()))
+);
+
+
+
+
+
 
 /**
  * Plays a best-of-5-rounds game of "Rock Paper Scissors".
