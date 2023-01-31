@@ -1,4 +1,4 @@
-// DOM logic
+// Player DOM logic
 
 const buttonPlayerRock = document.querySelector('.buttons-player-rock');
 buttonPlayerRock.addEventListener('click', () => {
