@@ -1,22 +1,31 @@
+// DOM logic
+
 const buttonPlayerRock = document.querySelector('.buttons-player-rock');
 buttonPlayerRock.addEventListener('click', () =>
-    console.log(playRound('rock', getComputerChoice()))
+    displayToCardResult(playRound('rock', getComputerChoice()))
 );
 
 const buttonPlayerPaper = document.querySelector('.buttons-player-paper');
 buttonPlayerPaper.addEventListener('click', () =>
-    console.log(playRound('paper', getComputerChoice()))
+    displayToCardResult(playRound('paper', getComputerChoice()))
 );
 
 const buttonPlayerScissors = document.querySelector('.buttons-player-scissors');
 buttonPlayerScissors.addEventListener('click', () =>
-    console.log(playRound('scissors', getComputerChoice()))
+    displayToCardResult(playRound('scissors', getComputerChoice()))
 );
 
+/**
+ * 
+ * @param {string} str the string to be displayed in the website's Result Card, typically for round announcements
+ */
+function displayToCardResult (str) {
+    const cardResult = document.querySelector('.card-result > .card-result-message');
+    cardResult.innerText = str;
+}
 
 
-
-
+// RPS logic
 
 /**
  * Plays a best-of-5-rounds game of "Rock Paper Scissors".
