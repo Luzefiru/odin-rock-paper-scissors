@@ -1,21 +1,42 @@
-// Player DOM logic
+// DOM logic
 
 const buttonPlayerRock = document.querySelector('.buttons-player-rock');
 buttonPlayerRock.addEventListener('click', () => {
-    displayToCardResult(playRound('rock', getComputerChoice()))
+    const computerChoice = getComputerChoice();
+    displayToCardResult(playRound('rock', computerChoice))
     updateScore();
+
+     // display the choice of the computer
+     document.querySelector('.computer-choice').setAttribute('src', `./res/${computerChoice}.png`);
+
+     // change it back to the choosing.gif after 2 seconds
+     setTimeout(() => (document.querySelector('.computer-choice').setAttribute('src', './res/choosing.gif')), 2000);
 });
 
 const buttonPlayerPaper = document.querySelector('.buttons-player-paper');
 buttonPlayerPaper.addEventListener('click', () => {
-    displayToCardResult(playRound('paper', getComputerChoice()))
+    const computerChoice = getComputerChoice();
+    displayToCardResult(playRound('paper', computerChoice))
     updateScore();
+
+     // display the choice of the computer
+     document.querySelector('.computer-choice').setAttribute('src', `./res/${computerChoice}.png`);
+
+     // change it back to the choosing.gif after 2 seconds
+     setTimeout(() => (document.querySelector('.computer-choice').setAttribute('src', './res/choosing.gif')), 2000);
 });
 
 const buttonPlayerScissors = document.querySelector('.buttons-player-scissors');
 buttonPlayerScissors.addEventListener('click', () => {
-    displayToCardResult(playRound('scissors', getComputerChoice()));
+    const computerChoice = getComputerChoice();
+    displayToCardResult(playRound('scissors', computerChoice));
     updateScore();
+
+    // display the choice of the computer
+    document.querySelector('.computer-choice').setAttribute('src', `./res/${computerChoice}.png`);
+
+    // change it back to the choosing.gif after 2 seconds
+    setTimeout(() => (document.querySelector('.computer-choice').setAttribute('src', './res/choosing.gif')), 2000);
 });
 
 /**
@@ -114,7 +135,7 @@ function playRound(playerChoice, computerChoice) {
  * @returns a string which is a random selection from; 'Rock', 'Paper', 'Scissors'
  */
 function getComputerChoice() {
-    let choices = ['Rock', 'Paper', 'Scissors'];
+    let choices = ['rock', 'paper', 'scissors'];
     let selection = Math.floor((Math.random() * 3)); // picks a random number form 0 - 2
 
     return choices[selection];
