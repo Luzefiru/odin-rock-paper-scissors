@@ -75,43 +75,6 @@ function replayGameConfirmation() {
 // RPS logic
 
 /**
- * Plays a best-of-5-rounds game of "Rock Paper Scissors".
- * 
- * Handles invalid input & is case-insensitive.
- */
-function game() {
-    let playerInput, roundOutcome;
-    let playerScore = 0, computerScore = 0;
-    let possibleChoices = ['rock', 'paper', 'scissors'];
-
-    while (playerScore + computerScore < 5) {
-        playerInput = prompt("What will you pick?");
-        playerInput = playerInput.toLowerCase();
-
-        // handles invalid inputs and redos the round
-        if (!possibleChoices.includes(playerInput)) {
-            alert("Try another input.");
-            continue;
-        }
-
-        roundOutcome = playRound(playerInput, getComputerChoice());
-        alert(roundOutcome);
-
-        if (roundOutcome.search('tie') != -1)// checks if the word 'tie' is in the return message
-            continue;
-        else if (roundOutcome.search('win') != -1) // checks if the word 'win' is in the return message
-            playerScore++;
-        else
-            computerScore++;
-    }
-
-    if (playerScore > computerScore)
-        alert(`You win the game! Final Score was ${playerScore}:${computerScore}`);
-    else
-        alert(`You lost the game. Final Score was ${playerScore}:${computerScore}`);
-}
-
-/**
  * WARNING: Does not error handle input outside the allowable strings listed below.
  * 
  * Acceptable string inputs are listed in this array: ['Rock', 'Paper', 'Scissors'].
