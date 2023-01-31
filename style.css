@@ -52,3 +52,19 @@ div.buttons-player {
     width: 15vw;
 }
 
+em {
+    font-weight: 500;
+}
+
+/* UI aesthetics */
+
+body {
+    background-image: linear-gradient(to right, plum, wheat);
+}
+
+.buttons-player > button {
+    background-color: whitesmoke;
+    border-color: transparent;
+    border-radius: 100%;
+    padding: 0.1vh;
+}

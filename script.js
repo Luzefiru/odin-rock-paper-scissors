@@ -1,4 +1,4 @@
-// DOM logic
+// Game DOM logic
 
 const buttonPlayerRock = document.querySelector('.buttons-player-rock');
 buttonPlayerRock.addEventListener('click', () => {
@@ -139,3 +139,11 @@ function getComputerChoice() {
 
     return choices[selection];
 }
+
+// Aesthetic Logic
+
+const buttonList = document.querySelectorAll('.buttons-player > button');
+buttonList.forEach((e) => {
+    e.addEventListener('mouseover', () => e.style.backgroundColor = 'rosybrown');
+    e.addEventListener('mouseout', () => e.style.backgroundColor = 'whitesmoke');
+})
