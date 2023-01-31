@@ -1,19 +1,51 @@
 // DOM logic
 
 const buttonPlayerRock = document.querySelector('.buttons-player-rock');
-buttonPlayerRock.addEventListener('click', () =>
+buttonPlayerRock.addEventListener('click', () => {
     displayToCardResult(playRound('rock', getComputerChoice()))
-);
+    updateScore();
+});
 
 const buttonPlayerPaper = document.querySelector('.buttons-player-paper');
-buttonPlayerPaper.addEventListener('click', () =>
+buttonPlayerPaper.addEventListener('click', () => {
     displayToCardResult(playRound('paper', getComputerChoice()))
-);
+    updateScore();
+});
 
 const buttonPlayerScissors = document.querySelector('.buttons-player-scissors');
-buttonPlayerScissors.addEventListener('click', () =>
-    displayToCardResult(playRound('scissors', getComputerChoice()))
-);
+buttonPlayerScissors.addEventListener('click', () => {
+    displayToCardResult(playRound('scissors', getComputerChoice()));
+    updateScore();
+});
+
+/**
+ * Updates the scoreboard after each round.
+ * 
+ * to be run everytime a player selects a choice & plays a round.
+ */
+function updateScore() {
+    let playerScore = Number(document.querySelector('.card-scoreboard-player').innerText);
+    let computerScore = Number(document.querySelector('.card-scoreboard-computer').innerText);
+
+    // selects the results card to find the round result
+    const cardResult = document.querySelector('.card-result > .card-result-message').innerText;
+
+    // updates score according to which player wins by scanning the results card announcement
+    if (cardResult.search('win') != -1) {
+        playerScore += 1;
+        document.querySelector('.card-scoreboard-player').innerText = playerScore;
+    }
+    else {
+        computerScore += 1;
+        document.querySelector('.card-scoreboard-computer').innerText = computerScore;
+    }
+
+    // prints an appropriate message when the combined score reaches 5 points (best of 5 rounds)
+    if (playerScore + computerScore >= 5) {
+        const winner = (playerScore > computerScore) ? 'You' : 'The Computer'
+        displayToCardResult(`${(winner)} won the game!`);
+    }
+}
 
 /**
  * 
@@ -23,7 +55,6 @@ function displayToCardResult (str) {
     const cardResult = document.querySelector('.card-result > .card-result-message');
     cardResult.innerText = str;
 }
-
 
 // RPS logic
 
