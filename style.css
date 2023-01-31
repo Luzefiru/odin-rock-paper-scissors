@@ -1,5 +1,7 @@
-body {
-    /* margin: 5rem 20%; */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 div.buttons-player {
