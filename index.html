@@ -7,7 +7,7 @@
     <script src="./script.js" defer></script>
   </head>
 
-  <body style="text-align: center"> <!-- TODO remove when CSS is made -->
+  <body>
     <h1>The Odin Project: Rock Paper Scissors Game</h1>
 
     <div class="buttons-player">
@@ -16,18 +16,20 @@
       <button class="buttons-player-scissors"><img src="./res/scissors.png" alt="Scissors"></button>
     </div>
 
-    <div class="card-result">
-      <h4 class="card-result-message">Choose your weapon...</h4>
-    </div>
+    <div class="section-dynamic">
+      <div class="card-result">
+        <em class="card-result-message">Choose your weapon...</em>
+      </div>
 
-    <div class="card-scoreboard">
-      <span class="card-scoreboard-player">0</span>
-      <span class="card-scoreboard-versus">:</span>
-      <span class="card-scoreboard-computer">0</span>
-    </div>
+      <div class="computer">
+        <img class="computer-choice" src="./res/choosing.gif" alt="Computer's Choice">
+      </div>
 
-    <div class="computer">
-      <img class="computer-choice" src="./res/choosing.gif" alt="Computer's Choice">
+      <div class="card-scoreboard">
+        <h2 class="card-scoreboard-player">0</h2>
+        <h2 class="card-scoreboard-versus">:</h2>
+        <h2 class="card-scoreboard-computer">0</h2>
+      </div>
     </div>
 
   </body>
